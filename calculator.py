@@ -1,3 +1,5 @@
+import math
+
 class Calculator:
     """Simple calculator class for basic arithmetic operations."""
 
@@ -23,6 +25,16 @@ class Calculator:
             raise ValueError("Cannot divide by zero.")
         return a / b
 
+    def sqrt(self, a):
+        """Return the square root of a.
+
+        Raises:
+            ValueError: If a is negative.
+        """
+        if a < 0:
+            raise ValueError("Cannot take square root of negative number.")
+        return math.sqrt(a)
+
 
 if __name__ == "__main__":
     # Example usage
@@ -31,3 +43,4 @@ if __name__ == "__main__":
     print("Subtraction:", calc.subtract(10, 4))
     print("Multiplication:", calc.multiply(2, 7))
     print("Division:", calc.divide(20, 5))
+    print("Square root:", calc.sqrt(16))  # 4.0
